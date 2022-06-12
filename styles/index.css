@@ -1,0 +1,59 @@
+.carousel-item>img {
+    height: calc(100vh);
+}
+
+.message {
+    color: deeppink;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.pink-list {
+    border: solid 1px deeppink;
+    border-radius: 20px;
+    background: deeppink;
+}
+
+ul.pink-list>li {
+    list-style-type: none;
+    color: white;
+}
+
+.images {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    object-fit: contain;
+}
+
+.img {
+    
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background-size: cover;
+  background-position: center;
+  margin-top: -50%;
+  margin-bottom: -70%;
+    
+}
+
+.title {
+    background-color: blue;
+    color: white;
+}
+
+.viagens-link {
+    text-decoration: none;
+    color: black;
+}
+
+.viagens-link:hover {
+    text-decoration: dotted;
+    color: blue;
+}
+
+.promocoes {
+    height: 400px !important;
+}
