@@ -1,5 +1,21 @@
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-left: 0px;
+}
+
+input[type="date"] {
+    display: flex;
+    flex-flow: row-reverse;
+    padding: 8px;
+    height: auto;
+}
+
 .carousel-item>img {
-    height: calc(100vh);
+    width: calc(100vw);
 }
 
 .message {
@@ -24,15 +40,13 @@ ul.pink-list>li {
 }
 
 .img {
-    
     max-width: 100%;
     max-height: 100%;
     overflow: hidden;
     background-size: cover;
-  background-position: center;
-  margin-top: -50%;
-  margin-bottom: -70%;
-    
+    background-position: center;
+    margin-top: -50%;
+    margin-bottom: -70%;
 }
 
 .title {
@@ -52,4 +66,69 @@ ul.pink-list>li {
 
 .promocoes {
     height: 400px !important;
+}
+
+.vai-para-onde {
+    background-color: #F0F0F0;
+    height: 416px;
+}
+
+.container-height {
+    height: 90%;
+}
+
+.card {
+    height: 90%;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.card__menu {
+    border-bottom: 1px solid #000;
+}
+
+.menu-button {
+    padding: 16px 25px;
+    cursor: pointer;
+}
+
+.menu-button__active {
+    color: #ffc107;
+    border-bottom: 2px solid #ffc107;
+}
+
+.menu-button:active {
+    color: #ffc107;
+    border-bottom: 2px solid #ffc107;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+.input-group>.box {
+    padding: 8px;
+    width: 50%;
+    display: flex;
+    border: none;
+}
+
+.input-group>.box>input {
+    width: 100%;
+    border: none;
+}
+
+.input-group>.box:nth-child(2) {
+    margin-left: 0px;
+    border-left: 2px solid #000;
+}
+
+.icon {
+    margin: auto;
+}
+
+.table-trip {
+    --bs-table-hover-bg: rgb(255, 193, 7, 0.075);
 }

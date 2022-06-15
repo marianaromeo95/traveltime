@@ -22,7 +22,7 @@ $(document).ready(function() {
             <br><br>
             <div class="row justify-content-center">
              
-             <a href="${promocao.url}" class="btn btn-primary btn-lg">Comprar</a>
+             <a href="${promocao.url}" class="btn btn-warning btn-lg">Comprar</a>
              
             </div>
             <br><br>
