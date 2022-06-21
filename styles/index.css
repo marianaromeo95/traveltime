@@ -165,3 +165,9 @@ ul.pink-list>li {
     letter-spacing: 0em;
     text-align: center;
 }
+
+.button-carrousel {
+    background-color: #ffc107;
+    height: 92px;
+    width: 92px;
+}
