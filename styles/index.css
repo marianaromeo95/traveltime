@@ -132,3 +132,36 @@ ul.pink-list>li {
 .table-trip {
     --bs-table-hover-bg: rgb(255, 193, 7, 0.075);
 }
+
+.trip-button {
+    color: #FFF;
+    border-radius: .5rem;
+}
+
+.radio-trip:focus,
+.radio-trip:active {
+    background-color: #ffc107;
+    border-color: rgba(255, 193, 7, 1);
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+.bar-right {
+    border-right: solid 1px #000;
+}
+
+.pacotes-banner {
+    background-image: url("../assets/airplane.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-pacotes {
+    font-family: Roboto;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: center;
+}
