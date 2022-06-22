@@ -13,64 +13,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="./data/promocoes.js"></script>
-    <script src="./data/viagens.js"></script>
-    <script src="./data/viagens2.js"></script>
+    <script src="./data/hoteis.js"></script>
+    <script src="./scripts/utils.js"></script>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/resorts-hoteis.css">
     <!-- icon -->
     <link rel="shortcut icon" href="./assets/logo.webp">
-    <script>
-        function formatReal(int) {
-            var tmp = int + '';
-            tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
-            if (tmp.length > 6)
-                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-
-            return tmp;
-        }
-
-        $(document).ready(function() {
-
-            promocoes.forEach(p => $("#promocoes").append(`
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="./promocoes/${p.id}.html" class="viagens-link">
-                        <div class="card mb-3">
-                            <img class="card-img-top image" src="${p.images[0]}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">${p.name} - ${p.preco}</h5>
-                                <p class="card-text">${p.hotel}</p>
-                                <p class="card-text"><small class="text-muted">Incluso: ${p.pacote.join(', ')}</small></p>
-                                <br>
-                            </div>
-                        </div>
-                    </a>
-                </div>      
-            `));
-
-            viagens.forEach((v, i) => $("#viagens").append(`
-                <tr>
-                    <th scope="row">${i+1}</th>
-                    <td>${v.name}</td>
-                    <td>R$ ${formatReal(v.ourPrice)}</td>
-                    <td>R$ ${formatReal(v.airlinePrice)}</td>
-                    <td>${v.discountPercentage} %</td>
-                    <td><a class="btn btn-warning" href="${v.url}" role="button" target="_blank">Comprar</a></td>
-                </tr>
-            `))
-
-            viagens2.forEach((v, i) => $("#viagens2").append(`
-                <tr>
-                    <th scope="row">${i+1}</th>
-                    <td>${v.name}</td>
-                    <td>R$ ${formatReal(v.ourPrice)}</td>
-                    <td>R$ ${formatReal(v.airlinePrice)}</td>
-                    <td>${v.discountPercentage} %</td>
-                    <td><a class="btn btn-warning" href="${v.url}" role="button" target="_blank">Comprar</a></td>
-                </tr>
-            `))
-        });
-    </script>
-
     <script>
         $(document).ready(function() {
             $(".menu-button").on('click', function() {
@@ -79,7 +27,35 @@
             });
         });
     </script>
+    <script>
+        function mountCardCarrousel(group, i) {
+            return `
+                <div class="carousel-item ${i === 0 ? 'active' : ''}">
+                    <div class="row">
+                            ${group.map(p =>  `
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                        <div class="card mb-3">
+                                            <img class="card-img-top image" src="${p.images[0]}" alt="Card image cap">
+                                            <div class="card-body align-items-center d-flex justify-content-center flex-column">
+                                                <h5 class="card-title hotel-name">${p.name}</h5>
+                                                <p class="card-text"><span class="hotel-preco" >${p.preco}</span> ${p.diaria? '/ diária': ''}</p>
+                                                <p class="card-text"><small class="text-muted">${p.hotel}</small></p>
+                                                <br>
+                                            </div>
+                                        </div>
+                                </div>
+                            `).join('')}  
+                    </div>
+                </div>    
+            `
+        }
 
+        $(document).ready(function() {
+                    groupArr(ofertas, 3).forEach((group, i) => $("#ofertas").append(mountCardCarrousel(group, i)));
+
+            groupArr(avaliacoes, 3).forEach((group, i) => $("#avaliacoes").append(mountCardCarrousel(group, i)));;
+        });
+    </script>
     <style></style>
 </head>
 
@@ -88,8 +64,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
         <div class="container h-100">
             <a class="navbar-brand" href="./index.html">
-                ✈️  <b><i>Travel Time</i></b>
-            </a>
+                    ✈️  <b><i>Travel Time</i></b>
+                </a>
 
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
@@ -97,10 +73,10 @@
                         <a class="nav-link " aria-current="page" href="./index.html">Passagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./pacotes.html">Pacotes</a>
+                        <a class="nav-link " aria-current="page" href="./pacotes.html">Pacotes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./resorts-hoteis.html">Hoteis/Resorts</a>
+                        <a class="nav-link active" href="./resorts-hoteis.html">Hoteis/Resorts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./blog.html">Blog</a>
@@ -170,11 +146,12 @@
     </div>
 
 
+
     <!-- Carousel com imagens -->
 
     <section id="home">
-        <div class="pacotes-banner" style="z-index: 1;">
-            <h1 class="title-h1" style="z-index: 999; text-align: center; padding-top: 160px; color: white;">Dê asas aos <span style="color: #ffc107;">seus sonhos.</span></h1>
+        <div class="hoteis-banner" style="z-index: 1;">
+            <h1 class="title-h1" style="z-index: 999; text-align: center; padding-top: 160px; color: white;">Desfrute de uma hospedagem <span style="color: #ffc107;">palaciana</span>.</h1>
         </div>
     </section>
 
@@ -187,22 +164,6 @@
                     <h1 class="text-center my-5">Vai para onde ?</h1>
                     <div class="container-fluid">
                         <div class="row justify-content-center">
-                            <div class="col-4 bar-right">
-                                <div class="float-end mt-2">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input radio-trip" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="inlineRadio1">Somente ida</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input radio-trip" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="inlineRadio2">Ida e volta</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input radio-trip" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                        <label class="form-check-label" for="inlineRadio3">Multidestino</label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-2">
                                 <div class="dropdown ms-4">
                                     <button class="btn btn-warning dropdown-toggle trip-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -283,56 +244,45 @@
 
     </section>
 
-    <!-- Viagens disponiveis -->
-    <section id="viagens-disponiveis">
+    <!-- Hotéis e resorts em oferta -->
+    <section>
         <br><br>
         <div class="container my-4">
-            <h1 class="text-center my-5">Passagens nacionais em destaque</h1>
+            <h1 class="text-center my-5">Hotéis e <i>resorts</i> em oferta</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <table class="table table-hover table-trip">
-                            <thead class="">
-                                <tr class="bg-warning">
-                                    <th scope="col" class="title">#</th>
-                                    <th scope="col" class="title">Nome</th>
-                                    <th scope="col" class="title">Nosso Preço</th>
-                                    <th scope="col" class="title">Preço das linhas aéreas</th>
-                                    <th scope="col" class="title">Desconto de porcentagem</th>
-                                    <th scope="col" class="title">Comprar</th>
-                                </tr>
-                            </thead>
-                            <tbody id="viagens">
-                            </tbody>
-                        </table>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="ofertas" class="carousel-inner">
                     </div>
+                    <button class="carousel-control-prev rounded-circle my-auto button-carrousel" style="margin-left: -40px;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next rounded-circle my-auto button-carrousel" style="margin-right: -40px;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="viagens-disponiveis">
+    <!-- Hotéis e resorts mais bem avaliados -->
+    <section>
         <br><br>
         <div class="container my-4">
-            <h1 class="text-center my-5">Passagens internacionais em destaque</h1>
+            <h1 class="text-center my-5">Hotéis e <i>resorts</i> mais bem avaliados</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <table class="table table-hover table-trip">
-                            <thead class="">
-                                <tr class="bg-warning">
-                                    <th scope="col" class="title">#</th>
-                                    <th scope="col" class="title">Nome</th>
-                                    <th scope="col" class="title">Nosso Preço</th>
-                                    <th scope="col" class="title">Preço das linhas aéreas</th>
-                                    <th scope="col" class="title">Desconto de porcentagem</th>
-                                    <th scope="col" class="title">Comprar</th>
-                                </tr>
-                            </thead>
-                            <tbody id="viagens2">
-                            </tbody>
-                        </table>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="avaliacoes" class="carousel-inner">
                     </div>
+                    <button class="carousel-control-prev rounded-circle my-auto button-carrousel" style="margin-left: -40px;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next rounded-circle my-auto button-carrousel" style="margin-right: -40px;" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>

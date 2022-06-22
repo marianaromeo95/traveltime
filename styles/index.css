@@ -157,7 +157,7 @@ ul.pink-list>li {
     height: 100vh;
 }
 
-.title-pacotes {
+.title-h1 {
     font-family: Roboto;
     font-size: 64px;
     font-weight: 400;
@@ -170,4 +170,86 @@ ul.pink-list>li {
     background-color: #ffc107;
     height: 92px;
     width: 92px;
+}
+
+.top-destinos-images {
+    width: 406px;
+    height: 350px;
+    border-radius: .75rem;
+    z-index: 100;
+}
+
+.text-top-destinos {
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 33px;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    right: 0px;
+}
+
+.top-destinos-images-md {
+    width: 623px;
+    height: 350px;
+    border-radius: .75rem;
+    z-index: 100;
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.125));
+}
+
+.cadastro-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    text-align: center;
+}
+
+.cadastro-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #323232;
+}
+
+.cadastro-input {
+    width: 50%;
+    height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #323232;
+    border-radius: 10px;
+}
+
+.line-cadastro {
+    border-bottom: 1px solid #808080;
+    height: 1px;
+    transform: rotate(-180deg);
+}
+
+.cadastro-button {
+    width: 35%;
+    height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #323232;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.cadastro-button:hover {
+    background-color: #F0F0F0;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background-color: white;
+    color: #FDA42B !important;
 }

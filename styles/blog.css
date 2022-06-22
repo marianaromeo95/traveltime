@@ -1,0 +1,58 @@
+.blog-banner {
+    background-image: url("https://s3-alpha-sig.figma.com/img/c2bd/f23c/dd8fe384c97fa3f1c53f81464444810e?Expires=1656892800&Signature=YMT9Zur7zvgGcw5rMjo5PctFPJ-u6GwsU3oaYj8TVVUXGa22p3zNrNHwc3jcJqCogL6-HM176~vCJL~vH9d1Hlwn6tcyD8GB2nr3D39Db-Qtx9ZsWLFfvr2unSAujT3CHlfdX5LjzLGb2Y-f52e~6E8wuvegY5H3T5eNcHHSbHv0eb9FUrVwxhcsuqbWM5pmXHbqGplq-GbUgJFqvZIlyWwd2rMpxu14sm3uHPSifvA6PwFwdPMr2eEE9dbkA9oNGfBPARRMd-e0vO9z5nbEEurO-xA4EIiY5sFLMYOXqjw~l-rh-kCr1c~LTlPJnh3~-Da5bnwjyMKxA-Z2AtnO0w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card-blog {
+    border-radius: .75rem;
+}
+
+.image-card-blog {
+    width: 100%;
+    height: 267px;
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;
+}
+
+.text-card-blog {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.card-blog-big {
+    background-color: #fff;
+    border-radius: .75rem;
+}
+
+.nav-link:hover,
+.nav-link:active {
+    background-color: #FAE4C6;
+    color: #FDA42B !important;
+}
+
+.dropdown-menu {
+    background-color: #FAE4C6;
+    color: #FDA42B;
+}
+
+.dropdown-item {
+    color: #FDA42B !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active {
+    background-color: #FDA42B;
+    color: #FAE4C6 !important;
+}
+
+.text-link {
+    color: #FDA42B !important;
+}

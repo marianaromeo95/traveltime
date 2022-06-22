@@ -18,27 +18,9 @@
     <link rel="stylesheet" href="./styles/index.css">
     <!-- icon -->
     <link rel="shortcut icon" href="./assets/logo.webp">
+    <script src="./scripts/utils.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script>
-        function formatReal(int) {
-            var tmp = int + '';
-            tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
-            if (tmp.length > 6)
-                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-
-            return tmp;
-        }
-
-        function groupArr(data, n) {
-            var group = [];
-            for (var i = 0, j = 0; i < data.length; i++) {
-                if (i >= n && i % n === 0)
-                    j++;
-                group[j] = group[j] || [];
-                group[j].push(data[i])
-            }
-            return group;
-        }
-
         // Criar mensagem de envio de e-mail
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('formEmail').addEventListener('submit', function(e) {
@@ -56,7 +38,6 @@
                     groupArr(promocoes, 3).forEach((group, i) => $("#promocoes").append(`
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
                     <div class="row">
-                        
                             ${group.map(p =>  `
                                 <div class="col-lg-4 col-md-6 col-sm-12">
                                     <a href="./promocoes/${p.id}.html" class="viagens-link">
@@ -102,7 +83,7 @@
 <body>
     <!-- Menu do topo -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
-        <div class="container">
+        <div class="container h-100">
             <a class="navbar-brand" href="./index.html">
                 ✈️  <b><i>Travel Time</i></b>
             </a>
@@ -110,30 +91,80 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Passagens</a>
+                        <a class="nav-link active" aria-current="page" href="./index.html">Passagens</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Pacotes</a>
+                        <a class="nav-link" aria-current="page" href="./pacotes.html">Pacotes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#destinos">Hoteis/Resorts</a>
+                        <a class="nav-link" href="./resorts-hoteis.html">Hoteis/Resorts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#viagens-disponiveis">Blog</a>
+                        <a class="nav-link" href="./blog.html">Blog</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#viagens-disponiveis">Sobre nós</a>
+                        <a class="nav-link" href="./sobre.html">Sobre nós</a>
                     </li>
                 </ul>
             </div>
             <ul class="navbar-nav" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link " href="#viagens-disponiveis">Cadastrar</a>
+                    <ul class="nav-link active" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</ul>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-header" style="border-bottom: none;">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img src="./assets/logo-orange.png" alt="">
+                        <br>
+                        <p class="cadastro-title">Acesse sua conta ou cadastre-se</p>
+                        <p class="cadastro-text">Insira seu e-mail para fazer login ou criar uma conta</p>
+                        <div class="cadastro-input">
+                            <div class="container h-100">
+                                <div class="row h-100 align-items-center">
+                                    <div class="col-1">
+                                        <img src="./assets/icon-mail.svg" alt="">
+                                    </div>
+                                    <div class="col-11">
+                                        <input type="email" style="all: unset; min-width: 100%;" placeholder="Digite seu e-mail...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;" data-bs-dismiss="modal">Cadastrar</button>
+                        <br>
+                        <div class="w-75 d-flex flex-row align-items-center">
+                            <div class="line-cadastro w-100"></div>
+                            <span class="mx-2">ou</span>
+                            <div class="line-cadastro w-100"></div>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-facebook.svg" alt="">
+                            <span>Continuar com facebook</span>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-google.svg" alt="">
+                            <span>Continuar com Google</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Carousel com imagens -->
 
@@ -281,7 +312,7 @@
 
     </section>
 
-
+    <!--Destinos-->
     <section>
         <br><br>
         <div class="container my-4">
@@ -308,17 +339,86 @@
         </div>
     </section>
 
-    <!-- Destinos -->
-    <section id="destinos">
+    <!--Top destinos-->
+    <section>
         <br><br>
         <div class="container my-4">
-            <h1 class="text-center my-5">Destinos</h1>
+            <h1 class="text-center my-5">Top destinos</h1>
             <div class="container">
-                <div id="promocoes" class="row">
+                <div class="row g-5 my-5">
+                    <div class="col-4">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/98ad/b251/cfe33093945d829d99b7449acaad0950?Expires=1656892800&Signature=CketEpXqhIMFb4Ny3X039628eH-cBaWLX5SmnH7czoIdfGJJiNgtWJMGc74xh50kfKvN1G0S54Zrqsr7YJErxTlirK4JBzgTbeKWt8bubohreI8mqR0Tm5FAKpXkkF3giL06j1JQ~KB2mWpqJakQ1r~3DMxMup6fjBQI588ZVFBrcVZHiwarYYGlgpmuzPE0Y73ln8mzU68HP0SvNKHbnws773h3uolC~iGeAFBMJIXLwehl6VstOri9drDlGtNJ-x6D6bnzWKKeYzzEkdAqmuxhG5UUD2nBNM2ZbCmlSK8YiU8-eWO~wcFBZCr5KZ2qYAQJ5NC70w-8L1sdXa9h~Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA  "
+                                    alt="" class="top-destinos-images">
+                                <span class="text-top-destinos">Orlando</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/7c2b/49dd/e30677880782e2cc7f45f68f70a6cb5a?Expires=1656892800&Signature=OC1PfA-3kK~ltgP7PRzvsp-I7fKc7ojqCC8iTQ240V5OKAW5LDh2TBonrMRkF7E6yQTpksSJS3z23BoDf4N-ZDQdFzzlPmiHYzxqxvyRgoeRdZVGSs5yyO1FZFY7VrCUbQYCHPz0kmEq1oKl8Gy2-~1-RJjSPZToWWYhvpDFbO0iFNXt3gvqej7j2knl2potuqxhK3kYmGHP-cTToMTmXRLLuZhVI2f51VSIaBk~fOYRVQ7qC2uTrNfkk3VuSRVK0fx8ZfnPPozCFZZcf2isFhn7flnC5r8oYOM04kCqPcWgYcv1-JGikPrdkdpQR-jmeL3nhQ6siDiVmo2WuM6OwA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images">
+                                <span class="text-top-destinos">Paris</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <div style="position: relative;">
+                            <img src="https://s3-alpha-sig.figma.com/img/a598/f16b/2c44cbabb43b449dd52468e9443cb709?Expires=1656892800&Signature=TD9rNH5x5tovAgPN0pjp9UVCo6l0G0jVkbzcq50qepfgbvNJC80dUFqlfgBfa~BejvqqqC5paLg6c~L8bc5lcrNbaPoVjZX42tjcsqRdsk2pexq3RLH7NFWPRcx~eVXMIHkLOTEEMoXyIKvlfgZzJnRYtDZ2~6WMZABkJzTTDt1zdXFTuoOriCspatz7poDSqUIvAyEXAWv5IO74h~VRchwV~0V5~Zyd2ylrF603rHiF12RfZtTbWLNQJJfajyK8qOK4ectHrv9EDN7n4ttqzGDjHrw30tEr8rnc-cVNtcE3WpAtu-RW3bJWLRRgQ~yEvKBwZ67kYrelN8~WPqCD8A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                alt="" class="top-destinos-images">
+                            <span class="text-top-destinos">Nova York</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;">Veja mais pacotes</button>
+                <div class="row g-5 my-5">
+                    <div class="col-6">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/eee6/3c3c/64137d3cc6cdbc7040c0ecf9f5549693?Expires=1656892800&Signature=R0Eaz1qSkzWpWhRM1N3XogH0WTYK3GtZe2AfVhDDYVJpkOHNJV4o~B9b~W2M4HcYdoMkBbLASAJPP1GGPHI-790BIyMZpwUWQ296vnES7~Qa2nB~mLOY02A~k6~NCTz4OeSBIuzx-cORCV9XwjRTDlF81Byk1rqevo8Sp3-Mcfggoo21ov8lz6KT315DenFheIRoByBZfz2YQqCFTITH8xeMy1tew99F6RIQ6VgtUA1UFNvrrhPWD9BPcsppD0rVQ5Bat~-DEwbP-SPz4GYHSEDI5kgy~JruFstEffFO7bzQ56fnT-Woz-vYVgTQKJEqcJuN3PfG~CCHlQ1JPgoOlQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images-md">
+                                <span class="text-top-destinos">Rio de Janeiro</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/ec45/0386/9cbd98e9a1ae46d51c8d84fd2459888b?Expires=1656892800&Signature=JhqkQATl2MIBUHr~30QmxHuOBspL3n2hL4FUP-iusf6RxHm7hE7DeNhNA6ybLnJbGR-TVDluvx46p~RP0vIgfLaWhdraNRp--cXz8MfnbNCbzTQbittykgtVa~NNUTNM5TQVrpb63QkmhJql-pJv3OfSgqwnRBJ7y54cqlULcyaX1zbq31rkSiXb-9sKQJT1rVYuFqvnaZGVTpvApGx3ZkZ3PFnhe0Cfaa2eFNtOQ2bGXjaa0gI~NKnWnbu6c8c5lGAk9jePC86wIa7FBazpbLkdT9~VflguPygduF4qLH0z3SzSuiwYriAM5OQWjrfuSrFozm8gf~rPy-UPAwVY2g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images-md">
+                                <span class="text-top-destinos">Londres</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row g-5 my-5">
+                    <div class="col-4">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/71cd/a144/f1ddea4080f325a1fc7ac9d4f99530b7?Expires=1656892800&Signature=bjuoaTai029upjcCrO1CM8R9Zv55WClbHrxapI7rGFD1UXW18~rKhUx~edhRsHwawFdLAv~LUvPm4eNJ7ZEEs71OJ4unccHw6jOJKhSWxF6BN3wLpVRT~CVeked9UNQnHgz-OoBo1Z9tyCX28n5LLVhX~rAJo9v-gmtmZ0ZhUmRGihsGP2SUyPZKnrILiIszoJ5N4Bu201jM0e8H8Dv0-fojd~DrDJ2xnqwYbs6qVu~v4Wkysp84hQiom~Z2lu71qRuQbrqxBEhYTe3Ki83eV5lbBcNTEDQiL-6U4f7u~-xDqXXwZ3UsIy4D3Xff5uIpjIKxCE6BeYY5lRHK1dqPzw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images">
+                                <span class="text-top-destinos">Vancouver</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/9264/3a82/9dcb376b2ea9955cfa4e80d2b2723a70?Expires=1656892800&Signature=YE-q5dMCMckhNddf~LdGcAVBgorUp4H3bLhlkq1Azy8XldnxSkQBw4xsueQ6-lCx73h2kDsGdhwxtZzL1wm6wjKZG8ovnTuVrip~eZiaATKBApjGfp51sdZSbTqYtKfeRHulDg2c9WzoBXw~Rvm5mVhx53VpafeMrseCFBySIDeEeDiQWHk7S2hnVNpmx04hpmOVJLlk-sN1oIYPFSzeXHnho5p0TDgbaVmxJY~u0hezS5mSxrQkMr248ytMyS8ATPNl4mvHMPIO7svSzhh8OZnvBy6qR0AdLA~m-csIrhlpJwtRu1XzMSIc2caomGa-BZDHSrwYK-PY8YhuQkuqdw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images">
+                                <span class="text-top-destinos">Dubai</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="#">
+                            <div style="position: relative;">
+                                <img src="https://s3-alpha-sig.figma.com/img/321c/0ea8/586de2e754af39a65a4e8778c0139720?Expires=1656892800&Signature=EZIYQhm8H~3Wn~IQ5dq6kJ~XR1IPHC-hqmNQswBRNInR87lv0uKBL2Iu11pafISxIoaQ4w82sFWIUkVjAKM6VtdcdRSF852-6q5vIpEoANdEvdJMgAQA0Mfau1hCSipd8vpq9jKJY~KjW71b4z3MtvpcwDrKLX2Hd-Wz8DCz9fg6foKyreaWg6qDnhZMqKRcvlDghbIqlEzLfWtPdSF9QSgreOj9nLfwmd8C0OoC8G5ap4Qik6d4znESYZYKnEz1ty2rLjmwzzBoqNRnUwAMrJxO084mikC40mIjMXTiAXThe94HUVDvYmNmyhggimZ0-zkFDemkiMTuDQVcEZB5hw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                    alt="" class="top-destinos-images">
+                                <span class="text-top-destinos">Sidney</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

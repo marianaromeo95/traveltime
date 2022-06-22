@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Time</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="./scripts/utils.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/sobre-nos.css">
+    <!-- icon -->
+    <link rel="shortcut icon" href="./assets/logo.webp">
+    <script>
+        $(document).ready(function() {
+            $(".menu-button").on('click', function() {
+                $('.menu-button__active').removeClass('menu-button__active  ');
+                $(this).addClass('menu-button__active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Menu do topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
+        <div class="container h-100">
+            <a class="navbar-brand" href="./index.html">
+                    ✈️  <b><i>Travel Time</i></b>
+                </a>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./index.html">Passagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./pacotes.html">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./resorts-hoteis.html">Hoteis/Resorts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./blog.html">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./sobre.html">Sobre nós</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <ul class="nav-link active" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-header" style="border-bottom: none;">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img src="./assets/logo-orange.png" alt="">
+                        <br>
+                        <p class="cadastro-title">Acesse sua conta ou cadastre-se</p>
+                        <p class="cadastro-text">Insira seu e-mail para fazer login ou criar uma conta</p>
+                        <div class="cadastro-input">
+                            <div class="container h-100">
+                                <div class="row h-100 align-items-center">
+                                    <div class="col-1">
+                                        <img src="./assets/icon-mail.svg" alt="">
+                                    </div>
+                                    <div class="col-11">
+                                        <input type="email" style="all: unset; min-width: 100%;" placeholder="Digite seu e-mail...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;" data-bs-dismiss="modal">Cadastrar</button>
+                        <br>
+                        <div class="w-75 d-flex flex-row align-items-center">
+                            <div class="line-cadastro w-100"></div>
+                            <span class="mx-2">ou</span>
+                            <div class="line-cadastro w-100"></div>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-facebook.svg" alt="">
+                            <span>Continuar com facebook</span>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-google.svg" alt="">
+                            <span>Continuar com Google</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel com imagens -->
+
+    <section id="home">
+        <div class="blog-banner" style="z-index: 1;">
+            <h1 class="title-h1" style="z-index: 999; text-align: center; padding-top: 160px; color: white;">Empenhados em fazer você deixar <br><span style="color: #ffc107;">sua marca no mundo</span>.</h1>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="sobre-main p-5">Há 25 anos no mercado, a Travel Time se dedica a ajudar você a sair do seu casulo para explorar o vasto e extraordinário mundo lá fora. Junte-se a nós nessa aventura!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Nosso  ...-->
+    <section style="background-color: #f0f0f0;">
+        <br><br>
+        <div class="container my-5 pb-5">
+            <h1 class="text-center my-5">Nosso legado</h1>
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-laptop.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Entre os top 5 sites de viagem <span style="color: #ffc107;">mais acessados</span> do Brasil</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-hotel.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Mais de 80 mil <span style="color: #ffc107;">hospedagens parceiras</span> em todo o mundo</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-location.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Uma variedade crescente de <span style="color: #ffc107;">novos destinos</span> adicionados diariamente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container mb-5 pb-5">
+            <h1 class="text-center my-5">Nossos valores</h1>
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-lightbulb.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Praticidade e inovação</p>
+                            <span class="small-card-sobre">Queremos que nossos clientes comprem passagens, pacotes ou agendem estadias com facilidade e agilidade e estamos sempre buscando maneiras inovadoras e eficientes de aperfeiçoar nossos processos para tal finalidade.</span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-handshake.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Confiabilidade e credibilidade</p>
+                            <span class="small-card-sobre">Acreditamos que nossos clientes devam ser recompensados por terem optado pela Travel Time; nada mais justo que fazê-lo dando a eles a confiança de que fizeram a escolha certa.</span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-sobre bg-white shadow rounded d-flex justify-content-center align-items-center flex-column p-5">
+                            <img src="./assets/icon-shootingstar.png" alt="">
+                            <br>
+                            <p class="text-card-sobre">Aprimoramento e excelência</p>
+                            <span class="small-card-sobre">A Travel Time preza pela perpétua e ininterrupta melhoria de seus serviços, pois sabe que isso é o que qualquer cliente deseja. Para nós, nem mesmo o céu é limite!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Nossa linha do tempo-->
+    <section>
+        <br><br>
+        <div class="container my-5 pb-5">
+            <h1 class="text-center my-5">Nossa linha do tempo</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    1997 - Nascimento da Travel Time
+                            </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt leo eget dolor iaculis, eget facilisis ipsum lobortis. Integer a ultricies lectus. Etiam at fermentum dolor, eu congue diam. Cras gravida nisl eros. Mauris congue tellus nec mauris
+                                    tempor dictum. Sed ultrices tristique mi id placerat. Cras lectus elit, suscipit eget consequat id, aliquam sed urna. Proin quis fermentum purus, vitae mattis ligula. Proin sed mauris ac nibh tristique ultricies. Praesent
+                                    accumsan aliquet orci. Aliquam erat volutpat. Proin sed erat imperdiet, sodales mi id, ultricies erat.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                    2000 - Evento 2
+                            </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree0" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    2007 - Evento 3
+                            </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree0" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree1" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    2013 - Evento 4
+                            </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree2" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    2013 - Evento 4
+                            </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree2" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance,
+                                    as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.blog-banner {
+    background-image: url("https://s3-alpha-sig.figma.com/img/7032/9385/12d3899c2cf0e62e7263e9f3a86c4132?Expires=1656892800&Signature=RHj98L1oy~t53YKKHOfFOc730u2XfXHIX8362-2jcl99BVdlmKZgMOV2E7eaED1I5CX2bqb6Dr42SPV2xiY-Mlz7us4YwP~HZycJMZuYjUXWKM6j~V6Qjc5Sa0G~02qYGSwPuhrmfqFrvmb1JDmxhRqxGefdaabw-RgCWvwxuJL~mHE8wNLWBOgSznKszeegnU1DQ0w3oSj2X2GJXn0KkJPZETmvHQge0X5sLB9lPI5F456bsEr5NATwJ0ImYKiEtQAAaFW81epyXwSCtir07hL8OxVZWNMxxHfrIyaJ9CtYsbkXlv0aLbXjJwlpevXnvcOnDcYC5UywoHNo8vstvw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.sobre-main {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.card-sobre {
+    width: 406px;
+    height: 406px;
+}
+
+.text-card-sobre {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+}
+
+.small-card-sobre {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #808080;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #FF4D00;
+    border: 2px solid #FDA42B;
+    background-color: rgba(255, 193, 7, 0.35);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+
+.accordion-header:not(.collapsed) {
+    border-top-left-radius: .75rem !important;
+    border-top-right-radius: .75rem !important;
+}

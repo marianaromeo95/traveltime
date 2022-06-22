@@ -1,0 +1,37 @@
+.hoteis-banner {
+    background-image: url("../assets/atlantis-the-palm.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hotel-preco {
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffc107;
+}
+
+.hotel-name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #323232;
+}
+
+.hotel-description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #323232;
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Time</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="./scripts/utils.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/blog.css">
+    <!-- icon -->
+    <link rel="shortcut icon" href="./assets/logo.webp">
+    <script>
+        $(document).ready(function() {
+            $(".menu-button").on('click', function() {
+                $('.menu-button__active').removeClass('menu-button__active  ');
+                $(this).addClass('menu-button__active');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Menu do topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top">
+        <div class="container h-100">
+            <a class="navbar-brand" href="./index.html">
+                ✈️  <b><i>Travel Time</i></b>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./index.html">Passagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./pacotes.html">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./resorts-hoteis.html">Hoteis/Resorts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./blog.html">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./sobre.html">Sobre nós</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <ul class="nav-link active" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu do topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="top: 56px; background-color: #FAE4C6; border: 1px solid #FDA42B;">
+        <div class="container h-100">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-link" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categoria 1
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 3</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-link" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categoria 2
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 3</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-link" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categoria 3
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="#">Subcategoria 1</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 2</a></li>
+                        <li><a class="dropdown-item" href="#">Subcategoria 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Menu do topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container h-100">
+            <a class="navbar-brand" href="./index.html">
+                ✈️  <b><i>Travel Time</i></b>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav mr-auto" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./index.html">Passagens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./pacotes.html">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./resorts-hoteis.html">Hoteis/Resorts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./blog.html">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./sobre.html">Sobre nós</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <ul class="nav-link active" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-header" style="border-bottom: none;">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img src="./assets/logo-orange.png" alt="">
+                        <br>
+                        <p class="cadastro-title">Acesse sua conta ou cadastre-se</p>
+                        <p class="cadastro-text">Insira seu e-mail para fazer login ou criar uma conta</p>
+                        <div class="cadastro-input">
+                            <div class="container h-100">
+                                <div class="row h-100 align-items-center">
+                                    <div class="col-1">
+                                        <img src="./assets/icon-mail.svg" alt="">
+                                    </div>
+                                    <div class="col-11">
+                                        <input type="email" style="all: unset; min-width: 100%;" placeholder="Digite seu e-mail...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;" data-bs-dismiss="modal">Cadastrar</button>
+                        <br>
+                        <div class="w-75 d-flex flex-row align-items-center">
+                            <div class="line-cadastro w-100"></div>
+                            <span class="mx-2">ou</span>
+                            <div class="line-cadastro w-100"></div>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-facebook.svg" alt="">
+                            <span>Continuar com facebook</span>
+                        </div>
+                        <br>
+                        <div class="cadastro-button d-flex px-2 justify-content-around align-items-center animate__fadeIn" data-bs-dismiss="modal">
+                            <img src="./assets/icon-google.svg" alt="">
+                            <span>Continuar com Google</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Carousel com imagens -->
+
+    <section id="home">
+        <div class="blog-banner" style="z-index: 1;">
+            <h1 class="title-h1" style="z-index: 999; text-align: center; padding-top: 160px; color: white;">Blog do viajante</h1>
+        </div>
+    </section>
+    <!-- Artigos do mês -->
+    <section id="artigo-do-mes">
+        <br><br>
+        <div class="container my-4">
+            <h1 class="text-center my-5">Artigos do mês</h1>
+            <div class="container px-5">
+                <div class="row gx-5">
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/d1c8/ddb6/7744edfa97146ebc231dbb4acd2bfb14?Expires=1656892800&Signature=D3GnaaB2T9cUPFOg-aTYRXmluHf6li4-Hzy5Wgj09-kT4cf2PIaD6vzlCzWBmXCY5WI9WYI4m8a82WGaS6y9-nKbuet4X8-x1teHcdHsEUOhLzn1ZBvSavGK23bSn26FlJ0XLjg1sjvKqr8AyQyS5ARqvWnGrLILzCaRAlsTcOj9fxWdm-9cWEnOgWVbAxiggMVyR~g-IDYas~2NXJqpdHx9xQZ9JDotF-kK7XxPzDLED6AXF9cg6QIt4m~UXQjk~xXDL0qrr46SCwesODcczcEcKHUqRp9N8vAwXsrv56s5bMtKpvHXFJPEOQW4thCdmGon7zpPGlx8ArK3ZzSmvA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" alt="...">
+                            <div class="card-body w-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 my-4 text-center text-card-blog">Top 5 resorts para se hospedar no Nordeste</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/51e7/12aa/b3f88c357759246ed0e1c9ad22559cd4?Expires=1656892800&Signature=XihNZiAkrBzgDgOnG7U2aR5T0eiIhwNVOv-L5dZfTSoZkbxz1YDp9GGuVam4WJxh0mp3gfzHrJh53gWbZXSS7MP4WeJTlt0xshie6sSdCMHPIdtlamb4GgwRcDARZHKWWZoJJvjpum-Ne7vkLI62FTEjLlHp-ST3ABjuGXsQ-2ZK-OsHkvG8eEDnOt~36b3HVgkXlFokakN-0wUsXSmurmp7SXBn1oBWr63~J3Oy077a0OWqZzY0y0eUiiP2BohHCoFOlaUFLkFj12gfDblcSX3DZLc-MvgNQgrgJYExgqk7VKCF964Y9ZEHAS-kkeAvqVHWaBKj3M-An7jKbTLARQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" style="width: 100%; height: 267px;" alt="...">
+                            <div class="card-body ">
+                                <p class="card-text px-5 pb-5 my-4  text-center text-card-blog">Conheça 6 das cidades mais agitadas do mundo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card-blog-big d-flex w-100 shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/3642/7c14/bc9caf70a8c5940ad45be602d42bc019?Expires=1656892800&Signature=RVp1t1V6jt8dfv0EJIcpWiol3rCv7TXEpHo1GcqO2ZLH7iUWV79wbhh0Y77XMFqcMW8KWIb9gJ1Mvi5nxgCimBjlEuqMqOuUnsmG2bmrGLkRUS8W8I4YDQ2jAsDXm8IfHf-QTnhNJox2IBhhIWIKJ4ft-a5-GVatAuh6w3QIcWw13BBqJpbkHCoDy2osK~hHIHLia-5Zn43PHlkAtzJS2HYM2WisvpuS4lFXHiBzAZooFvB~pKTEWAonZlvxTTHKQj-rKQEy0mks~6jBHYvC7puuiUFjFKT-Cn0D~FmqWze0T8nZCiT7SHOHpvzKZjGR~l1sfciVdmu8VpHjnY3bTw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top" style="width: 864px; height: 400px; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;" alt="...">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 text-center" style="font-family: Roboto;
+                                font-size: 28px;
+                                font-weight: 700;
+                                line-height: 33px;
+                                letter-spacing: 0em;
+                                text-align: center;
+                                ">Entusiasta de parques de diversão, mas cansado de Orlando? Conheça estes outros eletrizantes destinos!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 mt-4 d-flex justify-content-center align-items-center">
+                    <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;">Veja mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artigos mais lindo -->
+    <section id="artigo-mais-lindo" style="width: 100vw; min-height: 100vh; background-color: #f0f0f0;">
+        <br><br>
+        <div class="container my-5 pb-5">
+            <h1 class="text-center my-5">Artigos mais lidos</h1>
+            <div class="container px-5">
+                <div class="row">
+                    <div class="col-12 mb-5">
+                        <div class="card-blog-big d-flex w-100 shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/b091/002e/b80fd9a6352d5d314935bb0d15657562?Expires=1656892800&Signature=Uls247~ryGrt3phffw8ngaIp0n4yXTheXBmSXTOoofATNxl7VvRuiFcduTn-r0FX1Wq8qiM8~04qXd22qDgdIq6lmfwCYGsn6oRHfkrQNclFX-2KziUWTPqpt7CIaZL7Wg10lXb8G-580E54eTgfgUbEW~wq1MFOrRBt1WArng5LGnC~-1466XE39bCpUVXJh~UqVO~6N9juczNzJpJ8kynXY7tGk4aaK-VIGZPqKswyGv11bKHkR7V~VLwOddD6jOyL3cUW73i3-oUPbfR~ZpJFJypHqZCy955ChxMWbbHeQkEwOPjqtmb7ly3qhDkKOU4myFP4Cc81krub~~cpug__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top" style="width: 864px; height: 400px; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;" alt="...">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 text-center" style="font-family: Roboto;
+                                    font-size: 28px;
+                                    font-weight: 700;
+                                    line-height: 33px;
+                                    letter-spacing: 0em;
+                                    text-align: center;
+                                    ">Top 20 destinos mais bonitos do mundo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/712e/ed57/9a5924613798bea8021ecab5f3947090?Expires=1656892800&Signature=e7DkVdhvBTO-gpv81Pq3BADvC06WV-gicEeWl9-CtP0-mDhU4CwG7XBrCV5aTcQGMg03u-ih9ovc30D5f3JUqv5un7r61uxVxMZ5NXvG6fS2RooQNONmls6Pk3KAhWHlR086r-MLQ-k0jDg-Q11AJnkDCJQsq4mQyftCTyrsWSuARZfrxDDtXjmBAHHFjORCBudJ40l5xiU6ujCCLJjvvWg~hS4~QOsLms5eJGbLwSUqwoWVNRPKJrUYG7ZUr-SI9hidr9nb0384PETW1RdeqWI3on923DLIaf0sRGGoOzZ4ohk6E8Ub7sjoQQjw3FiPe9DgagdA502FfzuLRgWQoQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" alt="...">
+                            <div class="card-body w-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 my-4 text-center text-card-blog">Os melhores destinos no Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/985c/977c/5169f8a5470118c069c6374057ad4007?Expires=1656892800&Signature=Ixw056DocSe2z5~MLAQMm6mdP1s08KQtHW2zU0dFcf-C6CKP5ETTQ504Nt8PM0lYDqRtht9-2NGT~fmSx7ixA1D7wxS6xijAff4P3xGnRtxWrR6~4zBlcOvJ0IiiBjQBgqYtaQ2kY-HyRssjlGZfD5uxyb0l~~EDasHyj156hzf7jTIaY3SUYJnHk9L~tAuWGNlPHjGCgI-~zwx9LdfJ7gEbzCnKkUzQN~6JZg2cymJ9sGOBQozcNft4axxhU1McgIJJfBumCxmEXdXogOPdbXv9V3nyexzTQle1qoSAXOs0n~LxpoUMqX~3-qbxslrKs5an73tVaHt-bUQo96aFDw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" style="width: 100%; height: 267px;" alt="...">
+                            <div class="card-body ">
+                                <p class="card-text px-5 pb-5 my-4  text-center text-card-blog">10 cidades indispensáveis para entusiastas de arquitetura clássica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-100 mt-4 d-flex justify-content-center align-items-center">
+                    <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;">Veja mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Últimos artigos -->
+    <section id="ultimos-artigos" style="width: 100vw; min-height: 100vh;">
+        <br><br>
+        <div class="container my-5 pb-5">
+            <h1 class="text-center my-5">Últimos artigo</h1>
+            <div class="container px-5">
+                <div class="row g-5">
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/51e7/12aa/b3f88c357759246ed0e1c9ad22559cd4?Expires=1656892800&Signature=XihNZiAkrBzgDgOnG7U2aR5T0eiIhwNVOv-L5dZfTSoZkbxz1YDp9GGuVam4WJxh0mp3gfzHrJh53gWbZXSS7MP4WeJTlt0xshie6sSdCMHPIdtlamb4GgwRcDARZHKWWZoJJvjpum-Ne7vkLI62FTEjLlHp-ST3ABjuGXsQ-2ZK-OsHkvG8eEDnOt~36b3HVgkXlFokakN-0wUsXSmurmp7SXBn1oBWr63~J3Oy077a0OWqZzY0y0eUiiP2BohHCoFOlaUFLkFj12gfDblcSX3DZLc-MvgNQgrgJYExgqk7VKCF964Y9ZEHAS-kkeAvqVHWaBKj3M-An7jKbTLARQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" alt="...">
+                            <div class="card-body w-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 my-4 text-center text-card-blog">Conheça 6 das cidades mais agitadas do mundo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/1079/e239/82e52c00af4957c8763eeb0c556bad2d?Expires=1656892800&Signature=cGndqzvl2tCrBgJEO5SUSN-l5ShZJLYXg83-uxalr89aqureHWVM3eAR6OnLrr-pQ12m727FPsBJ~MQc26L5MoDCAL5jSIeIq2ktADG5~szFbvwInCaKeQ5chOrInIJCu9mw-fdhF-N-iTybwdkdC7uNEfSavlPHuV0XS6mjYSynEAwT5QkfhrYqsV5ChlPFQnaOgu4Df38y2i0Gh~ZhBL0q7SOafoKHxXrpRaxynmi1WSqIzymVuwMnqxrkAy2CnL4qJdYiG4fOK2VK-Ae~dKAS9ipih4IuN9n-v~5d7sblmPqikJhnR1BltkHl1CJvl6X85EIFOEd40rritNeVIQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" style="width: 100%; height: 267px;" alt="...">
+                            <div class="card-body ">
+                                <p class="card-text px-5 pb-5 my-4  text-center text-card-blog">5 cidades interiorianas brasileiras que vale a pena conhecer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/767b/257b/765e26496d13285bff129d7738297567?Expires=1656892800&Signature=YOKBbeb~MPWFSsHV0RQen1U3hzyBEu6eog2rMRFHSBwddA6-Q-~xhtTra74DgdID6wN9qcc1CSraLO1sL8iCcv0G0RM1QELoe1NLP-Q1G6-gck1C6oW4DxVFZPeftcXJOHTFieN~z598iCEcw5pgSv7AuvYNEu7hCfDw~S95QhBmKiThqzl0Ua8wpZqehS5YuIFyahKUc5gOfPB0YEn0Rs9~AGLNsXeXvubN5ZJm9SueQjZAS-8dcPo~ZjySbFnwNtlJB6Z9RKSn~ciwsdzCdIZHOupJHWZCm5nVogum5sELhf7~UJfbCXgifvc1bT4pKJAFPJeh6C8dVyBYb2MPig__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" alt="...">
+                            <div class="card-body w-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 my-4 text-center text-card-blog">5 cidades interiorianas brasileiras que vale a pena conhecer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/e260/72a1/7e7864f3ed496a601e3b1c8291a2b994?Expires=1656892800&Signature=CfyLLJLw6-0ulRI9jFVcawdropD9A3nlFpcCTzmE25PnLw0XiNmGN5s0zIOOcAw8d085XJtnpc-njZ5m0Gc-zgoXtI6xTf6Eyb948yL3tsMb1QoMM5GVeDFac4BccRRGDCe6JkhT18v4acbWkhMfOS-CZ22nem4Z61T6e06aeg~2bd1Q06NpTjbGlaxt5F0M~Btx5HGKQsIz5obB~8~E480jZt7IDLJGgkFchs5BNSWiE2Wg8PPeeoOiWZPR19fB9CPn12q0EPCz0rY1cnY1gVw7a~ornKZGSefHeEKGiYRpNr4Xstq5HH25C0bwm81B8KXRo~lz0OawuosmSiSCRg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" style="width: 100%; height: 267px;" alt="...">
+                            <div class="card-body ">
+                                <p class="card-text px-5 pb-5 my-4  text-center text-card-blog">O que fazer em Astana, a moderníssima capital do Cazaquistão</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/3cdd/ca08/9ce3fe2f86c35e790a9dace4101ed94e?Expires=1656892800&Signature=hpzIKad51sTuT01HTB8OIcxdDnfwMMlo3ruonMbcLijc97c6iNaXR73qvqDFbPeNkVYP~5JVCjlGdGbz0rjUFSITxLoSNJxOpMOWf7UsZbK0joHzvsBxM4sOl3VIOYSSEgxhHZGiwtEIlD4PJMZ3N3MLIG~Vxz4GfhtFY2CyKKc8Yxcg7haUNOkqzE0ISI99QtJFBFyDIefzqIOFrNfdc6AzYirgXYtMZDubLeAT-vnzCIyF0f7Y4hQ1ObESY6qNEQ3Sh54gqWUAf51tIBwg9hMzKg74tDxsAdFWwTZGoPH-QQil~ba0nIpNSOde9o86GJ8dhUXNXf1SE4qX4vPP0Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" alt="...">
+                            <div class="card-body w-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text px-5 pb-5 my-4 text-center text-card-blog">Como aproveitar a recessão econômica argentina para fazer turismo gastronômico em Buenos Aires</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card card-blog shadow">
+                            <img src="https://s3-alpha-sig.figma.com/img/e34b/1569/b4bb15f6cc49c2f11b1d101326f6217b?Expires=1656892800&Signature=APPG8nnI-qN96xoar14KroN9nxKAvBH~Zn7Rf1tgF1TkqwOAuocO1-1anPfBQlbQSnTf4pOMZF0RDNdMU7XXjR4qRpcRvL1AjYc1OiRkGR7WyOOCjmgTGa~iINkCf-XTA1-bU72fWCX2GPCVsrwQ9y3pnwvgcStsC9ksAKdanZG3xWoQVdkLHzmlpPYidCXK27k0cszHAzFvvW5AK5teqV24OYY68Qw6gy3zOnpbCKToOk344JxsxpQ~oewzFy-fnmzRhVMCU5DqfMsYQ2UFOq7sTVH4sqoByw8O9t9PTeuAr1sD5hbLamJjHR12YUhdnwSeh5WgGWIWOiGj9uGl6Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                                class="card-img-top image-card-blog" style="width: 100%; height: 267px;" alt="...">
+                            <div class="card-body ">
+                                <p class="card-text px-5 pb-5 my-4  text-center text-card-blog">O que fazer no Alasca, a “última fronteira”</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="w-100 mt-4 d-flex justify-content-center align-items-center">
+                    <button class="btn btn-warning btn-lg rounded-pill px-5" style="color: white;">Veja mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
