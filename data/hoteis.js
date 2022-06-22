@@ -1,60 +1,117 @@
 const ofertas = [{
         id: 1,
-        name: "Hotel da Lua",
-        preco: "R$ 1500,00",
-        hotel: "Fortaleza - CE",
+        name: "Costão do Santinho Resort (7 dias)",
+        preco: "R$ 3842,00",
+        hotel: "Florianópolis - SC",
         images: [
-            "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHViYWl8ZW58MHx8MHx8&w=1000&q=80",
+            "./assets/costao-do-santinho-resort-florianopolis.jpg",
         ],
     },
     {
         id: 2,
-        name: "Hotel Roial Tulip",
-        preco: "R$ 1680,00",
+        name: "Royal Tulip Brasília Alvorada (7 dias)",
+        preco: "R$ 1956,00",
         hotel: "Brasília - DF",
         images: [
-            "https://i0.wp.com/blog.kennedyturismo.com.br/wp-content/uploads/2020/07/33-Central-Park.jpg?fit=2000%2C1333&ssl=1",
+            "./assets/royal-tulip-brasilia.jpg",
         ],
     },
     {
         id: 3,
-        name: "Hotel Boulevard",
-        preco: "R$ 2100,00",
-        hotel: "Pipa - PE",
+        name: "Vivá Porto de Galinhas Resort (7 dias)",
+        preco: "R$ 5736,00",
+        hotel: "Ipojuca - PE",
         images: [
-            "https://www.thepinnaclelist.com/wp-content/uploads/2016/01/01-Roca-Llisa-Luxury-Villa-Ibiza-Balearic-Islands-Spain.jpg",
+            "./assets/viva-resort-porto-de-galinhas.jpg",
+        ],
+    },
+    {
+        id: 1,
+        name: "Costão do Santinho Resort (7 dias)",
+        preco: "R$ 3842,00",
+        hotel: "Florianópolis - SC",
+        images: [
+            "./assets/costao-do-santinho-resort-florianopolis.jpg",
+        ],
+    },
+    {
+        id: 2,
+        name: "Royal Tulip Brasília Alvorada (7 dias)",
+        preco: "R$ 1956,00",
+        hotel: "Brasília - DF",
+        images: [
+            "./assets/royal-tulip-brasilia.jpg",
+        ],
+    },
+    {
+        id: 3,
+        name: "Vivá Porto de Galinhas Resort (7 dias)",
+        preco: "R$ 5736,00",
+        hotel: "Ipojuca - PE",
+        images: [
+            "./assets/viva-resort-porto-de-galinhas.jpg",
         ],
     }
-];
+]
 
 const avaliacoes = [{
         id: 1,
-        name: "Hotel do amanhã",
-        preco: "R$ 950,00",
-        hotel: "Gramado - RS",
+        name: "Bellagio",
+        preco: "R$ 1153,00",
+        hotel: "Las Vegas, Nevada - EUA",
         diaria: true,
         images: [
-            "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHViYWl8ZW58MHx8MHx8&w=1000&q=80",
+            "./assets/bellagio-las-vegas.jpg",
         ],
     },
     {
         id: 2,
-        name: "Hotel RKL",
-        preco: "R$ 499,00",
-        hotel: "Florianópolis - SC",
+        name: "The Dolder Grand",
+        preco: "R$ 2556,00",
+        hotel: "Zurique, Suíça",
         diaria: true,
         images: [
-            "https://i0.wp.com/blog.kennedyturismo.com.br/wp-content/uploads/2020/07/33-Central-Park.jpg?fit=2000%2C1333&ssl=1",
+            "./assets/dolder-grand-zurique.png",
         ],
     },
     {
         id: 3,
-        name: "Hotel L'amour",
-        preco: "R$ 799,00",
-        hotel: "Belo Horizonte - MG",
+        name: "Oak Bay Beach Hotel",
+        preco: "R$ 2282,00",
+        hotel: "Victoria, Colúmbia Britânica, Canadá",
         diaria: true,
         images: [
-            "https://www.thepinnaclelist.com/wp-content/uploads/2016/01/01-Roca-Llisa-Luxury-Villa-Ibiza-Balearic-Islands-Spain.jpg",
+            "./assets/oakbaybeachhotel-victoria.jpg",
+        ],
+    },
+    {
+        id: 1,
+        name: "Bellagio",
+        preco: "R$ 1153,00",
+        hotel: "Las Vegas, Nevada - EUA",
+        diaria: true,
+        images: [
+            "./assets/bellagio-las-vegas.jpg",
+        ],
+    },
+    {
+        id: 2,
+        name: "The Dolder Grand",
+        preco: "R$ 2556,00",
+        hotel: "Zurique, Suíça",
+        diaria: true,
+        images: [
+            "./assets/dolder-grand-zurique.png",
+        ],
+    },
+    {
+        id: 3,
+        name: "Oak Bay Beach Hotel",
+        preco: "R$ 2282,00",
+        hotel: "Victoria, Colúmbia Britânica, Canadá",
+        diaria: true,
+        images: [
+            "./assets/oakbaybeachhotel-victoria.jpg",
         ],
     }
 ]
